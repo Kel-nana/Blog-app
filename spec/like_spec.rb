@@ -5,7 +5,6 @@ RSpec.describe Like, type: :model do
 
   before { subject.save }
 
-
   describe 'update_posts_likes_counter' do
     user = User.create(name: 'Man', photo: 'https://example.com', bio: 'bio', posts_counter: 0)
     post = Post.create(title: 'first post', text: 'captain america', author_id: user.id, comments_counter: 0,
