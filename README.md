@@ -92,7 +92,7 @@ PostgreSQL installed and running
 
 ### Setup
 
-git clone git@github.com:Kel-nana/Blog-app.git
+git clone git@github.com:Kel-nana/Blog-app.git<br>
 cd Blog-app
 
 ### Install
