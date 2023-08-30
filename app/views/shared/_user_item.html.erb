@@ -1,0 +1,13 @@
+<div class="user-image">
+          <%= image_tag('user.png', width: "150px", height: "100px") %>
+        </div>
+        <div class="user-details">
+          <% if show_link %>
+      <h2 class="user-name"><%= link_to user.name, "users/#{user.id}", class: "user-link" %></h2>
+    <% else %>
+      <h2 class="user-name"><%= user.name %></h2>
+    <% end %>
+          <p class="post-count">Number of posts: <%= user.posts_counter || 0 %></p>
+        </div>
+
+
