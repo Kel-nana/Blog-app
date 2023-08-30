@@ -1,1 +1,39 @@
 <h1>Show a specific User Post</h1>
+
+<section class="user-post">
+  <div id="user-page">
+    <div class="btn-container">
+      <%= link_to "Home", root_path %>
+      <div class="back-link-container">
+        <%= link_to "Back", :back, class: "back-link2" %> 
+      </div> 
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="post-header">
+      <div class="user-image">
+        <%= image_tag('user.png', width: "150px", height: "100px") %>
+      </div>
+      <h2>
+        Post
+        by <%= @user.name %>
+      </h2>
+      <h4>
+        Comments: <%= @post.comments_counter %>,
+        Likes: <%= @post.likes_counter %>
+      </h4>
+    </div>
+    <h3><%= @post.title %></h3>
+    <p><%= @post.text %></p>
+  </div>
+</section>
+
+<% if @post.comments_counter > 0 %>
+  <div class="comments">
+    <% @comments.each do |comment| %>
+      <li><%= comment.user.name %>:
+      <%= comment.text %></li>
+    <% end %>
+  </div>
+<%end%>

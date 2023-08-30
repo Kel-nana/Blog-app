@@ -1,1 +1,52 @@
 <h1>Users Post list</h1>
+
+<main id="posts" class="page">
+  <div id="user-page">
+    <div class="btn-container">
+      <%= link_to "Home", root_path %>
+      <div class="back-link-container">
+        <%= link_to "Back", :back, class: "back-link2" %> 
+      </div> 
+    </div>
+  </div>
+
+  <div class="user-container posts">
+    <div class="userdetails-div">
+       <div class="user-image">
+          <%= image_tag('user.png', width: "150px", height: "100px") %>
+        </div>
+      <h3><%= link_to @user.name, user_path(@user) %></h3>
+      <p class="posts-counter">Number of posts: <%= @user.posts_counter %></p>
+    </div>
+  </div>
+
+  <article class="post-article">
+    <% if @user.posts.empty? %>
+      <p>No posts added yet.</p>
+    <% else %>
+      <% @user.posts.each do |post| %>
+        <div class="post-container">
+          <h3 class="post-title"><%= link_to post.title, "posts/#{post.id}" %></h3>
+          <div class="post-details">
+            <p class="details"><%= truncate(post.text, length: 100) %></p>
+          </div>
+          <div class="comment-like-container">
+            <p class="coment-likes-data">
+              Comment: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %>
+            </p>
+          </div>
+        </div>
+         <ul class="post-comments-container">
+          <% post.new_comments.each do |comment| %>
+            <li>
+              <p><%= link_to User.find_by(id: comment.user_id).name, user_path(comment.user_id) %>: <%= truncate(comment.text, length: 60) %>...</p>
+            </li>
+          <% end %>
+          <% if post.new_comments.empty? %>
+            <li>No comments added yet.</li>
+          <% end %>
+        </ul>
+      <% end %>
+    <% end %>
+  </article>
+</main>
