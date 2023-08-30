@@ -1,20 +1,19 @@
 <h1>Show a specific User Post</h1>
 
 <section class="user-post">
-  <div id="user-page">
+   <div id="user-page">
     <div class="btn-container">
-      <%= link_to "Home", root_path %>
-      <div class="back-link-container">
+      <div class="home-link-container ">
+      <%= link_to "Home", root_path, class: "home-link2" %>
+      </div>
+      <div class="back-link-container ">
         <%= link_to "Back", :back, class: "back-link2" %> 
       </div> 
     </div>
-  </div>
 
-  <div class="post">
+  <div class="post user_post">
     <div class="post-header">
-      <div class="user-image">
-        <%= image_tag('user.png', width: "150px", height: "100px") %>
-      </div>
+    
       <h2>
         Post
         by <%= @user.name %>
@@ -30,7 +29,7 @@
 </section>
 
 <% if @post.comments_counter > 0 %>
-  <div class="comments">
+  <div class="comments post">
     <% @comments.each do |comment| %>
       <li><%= comment.user.name %>:
       <%= comment.text %></li>

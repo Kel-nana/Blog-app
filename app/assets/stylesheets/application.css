@@ -13,3 +13,114 @@
  *= require_tree .
  *= require_self
  */
+.user-item {
+  display: flex;
+  gap: 7%;
+  margin-bottom: 7%;
+}
+
+.user-image {
+  border: 2px solid black;
+  border-radius: 8px;
+  padding-top: 2px;
+  width: 150px;
+}
+
+.user-details {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 70%;
+}
+
+.user-details h2 {
+  margin-left: 5%;
+}
+
+.user-details p {
+  margin-top: 9%;
+  margin-right: 5%;
+}
+
+.user-bio {
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 30vh;
+  width: 88.7%;
+  margin-bottom: 5%;
+}
+
+.user-bio-content {
+  margin-left: 5%;
+}
+
+.post {
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 20vh;
+  width: 83.7%;
+  margin: 0;
+  padding-left: 5%;
+}
+
+.post-meta {
+  margin-left: 82.5%;
+}
+
+.see-all-posts,
+.home-link-container,
+.back-link-container {
+  display: flex;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  border-radius: 8px;
+  margin-left: 40%;
+  margin-bottom: 5%;
+  padding: 5px;
+  box-shadow:
+    rgba(51, 26, 42, 0.4) 5px 5px,
+    rgba(34, 27, 31, 0.3) 10px 10px,
+    rgba(164, 135, 153, 0.2) 15px 15px,
+    rgba(236, 221, 230, 0.1) 20px 20px,
+    rgba(231, 182, 213, 0.05) 25px 25px;
+}
+
+.see-link,
+.home-link2,
+.back-link2 {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn-container {
+  display: flex;
+  gap: 10% !important;
+}
+
+.home-link-container,
+.back-link-container {
+  margin-left: 0% !important;
+}
+
+.post-comments-container,
+.post_container {
+  margin-bottom: 5% !important;
+}
+
+.post-comments-container {
+  padding-top: 25px !important;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user_post,
+.comments {
+  height: 40vh !important;
+  padding: 1% !important;
+}
