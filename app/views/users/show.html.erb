@@ -1,1 +1,49 @@
-<h1>Show a specific User</h1>
+<h1>Show User Details</h1>
+<h3 class="user-id">User ID: <%= @user.id %></h3>
+
+<main id="user-details" class="page">
+  <div id="user-page">
+    <div class="btn-container">
+      <%= link_to "Home", root_path %>
+      <div class="back-link-container">
+        <%= link_to "Back", :back, class: "back-link2" %> 
+      </div> 
+    </div>
+  </div>
+  
+   <div class="image-div">
+ <%= image_tag('user.png', width: "150px", height: "100px") %>
+ </div>
+  
+  <div class="user-details-container">
+    <div class="user-info">
+      <h3 class="user-name"><%= @user.name %></h3>
+      <p class="user-posts-counter">Number of posts: <%= @user.posts_counter %></p>
+    </div>
+
+    <article class="user-bio">
+      <h3>Bio</h3>
+      <div class="user-bio-content"><%= @user.bio %></div>
+    </article>
+  </div>
+
+  <article class="user-posts">
+    <% @posts.each do |post| %>
+      <div class="post">
+        <h3 class="post-title"><%= post.title %></h3>
+        <div class="post-content">
+          <p class="post-details"><%= post.text[0..100] %></p>
+        </div>
+        <div class="post-meta">
+          <p class="post-metadata">
+            Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </article>
+
+  <div class="see-all-posts">
+    <%= link_to "See all posts", user_posts_path(@user), class: "see-link" %>
+  </div>
+</main>
