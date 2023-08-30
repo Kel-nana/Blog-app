@@ -2,29 +2,12 @@
 <h3 class="user-id">User ID: <%= @user.id %></h3>
 
 <main id="user-details" class="page">
-  <div id="user-page">
-    <div class="btn-container">
-      <div class="home-link-container ">
-      <%= link_to "Home", root_path, class: "home-link2" %>
-      </div>
-      <div class="back-link-container ">
-        <%= link_to "Back", :back, class: "back-link2" %>
-      </div> 
-    </div>
-  </div>
-  
+<%= render partial: 'shared/nav_link' %>
 
-  
   <div class="user-details-container ">
     
     <div class=" user-item">
-       <div class="user-image">
- <%= image_tag('user.png', width: "150px", height: "100px") %>
- </div>
- <div class="user-details">
-      <h2 class="user-name"><%= @user.name %></h2>
-      <p class="user-posts-counter">Number of posts: <%= @user.posts_counter %></p>
-      </div>
+      <%= render partial: 'shared/user_item', locals: { user: @user, show_link: false } %>
     </div>
 
     <article class="user-bio">
