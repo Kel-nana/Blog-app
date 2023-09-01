@@ -1,10 +1,10 @@
-<h1>Users Post list</h1>
+<%# <h1>Users Post list</h1> %>
 
 <main id="posts" class="page">
 <%= render partial: 'shared/nav_link' %>
 
     <div class=" user-item">
-       <%= render partial: 'shared/user_item', locals: { user: @user, show_link: true  } %>
+       <%= render partial: 'shared/user_item', locals: { user: @user, show_link: false  } %>
     </div>
     
   <article class="post-article">
@@ -13,8 +13,8 @@
       <p>No posts added yet.</p>
     <% else %>
       <% @user.posts.each do |post| %>
-        <div class="post-container post">
-          <h3 class="post-title"><%= link_to post.title, "posts/#{post.id}" %></h3>
+        <div class="post-container-div ">
+          <h3 class="post-title"><%= link_to post.title, "posts/#{post.id}" , class: "link-custom-color"%></h3>
           <div class="post-details">
             <p class="details"><%= truncate(post.text, length: 100) %></p>
           </div>
