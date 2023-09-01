@@ -1,0 +1,240 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body {
+  background: rgb(255, 255, 255);
+  background:
+    linear-gradient(
+      107deg,
+      rgba(255, 255, 255, 1) 8%,
+      rgba(54, 55, 57, 0.9808298319327731) 86%
+    );
+  width: 100vw;
+  height: 100%;
+  padding-bottom: 5%;
+  padding-top: 2%;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+  height: 2em;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: rgb(27, 22, 56);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(16, 10, 47);
+  border-radius: 20px;
+  border: 3px solid #746c6c;
+}
+
+.user-item {
+  display: flex;
+  gap: 7%;
+  margin-bottom: 7%;
+}
+
+.user-image {
+  display: flex;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding-top: 2px;
+  width: 150px;
+  background: gray;
+}
+
+.user-details {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 8px;
+  background:
+    linear-gradient(
+      0deg,
+      rgba(149, 157, 170, 1) 1%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(97, 109, 128, 0.969625350140056) 97%
+    );
+  width: 70%;
+}
+
+.user-details h2 {
+  margin-left: 5%;
+}
+
+.user-details p {
+  margin-top: 9%;
+  margin-right: 5%;
+}
+
+.post-container-div {
+  background:
+    linear-gradient(
+      0deg,
+      rgba(149, 157, 170, 1) 1%,
+      rgba(25, 36, 62, 1) 49%,
+      rgba(97, 109, 128, 0.969625350140056) 97%
+    );
+  margin-right: 11.1vw;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 5px 10px;
+  padding-bottom: 20px;
+}
+
+.link-custom-color,
+.user-link {
+  color: rgb(113, 81, 39);
+  border: 1px solid rgba(8, 37, 66, 0.615);
+  padding: 2px 17px;
+  border-radius: 8px;
+  box-shadow:
+    rgba(0, 0, 0, 0.17) 0 -23px 25px 0 inset,
+    rgba(0, 0, 0, 0.15) 0 -36px 30px 0 inset,
+    rgba(0, 0, 0, 0.1) 0 -79px 40px 0 inset,
+    rgba(0, 0, 0, 0.06) 0 2px 1px,
+    rgba(0, 0, 0, 0.09) 0 4px 2px,
+    rgba(0, 0, 0, 0.09) 0 8px 4px,
+    rgba(0, 0, 0, 0.09) 0 16px 8px,
+    rgba(0, 0, 0, 0.09) 0 32px 16px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
+}
+
+.user-bio {
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 30vh;
+  width: 88.7%;
+  margin-bottom: 5%;
+}
+
+.user-bio-content {
+  margin-left: 5%;
+}
+
+.post {
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 20vh;
+  width: 83.7%;
+  margin: 0;
+  padding-left: 5%;
+}
+
+.post-meta {
+  margin-left: 82.5%;
+}
+
+.see-all-posts,
+.home-link-container,
+.back-link-container {
+  display: flex;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  border-radius: 8px;
+  margin-left: 40%;
+  margin-bottom: 5%;
+  padding: 5px 0;
+  box-shadow:
+    rgba(51, 26, 42, 0.4) 5px 5px,
+    rgba(34, 27, 31, 0.3) 10px 10px,
+    rgba(164, 135, 153, 0.2) 15px 15px,
+    rgba(236, 221, 230, 0.1) 20px 20px,
+    rgba(231, 182, 213, 0.05) 25px 25px;
+}
+
+.see-link,
+.home-link2,
+.back-link2 {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn-container {
+  display: flex;
+  gap: 10% !important;
+}
+
+.home-link-container,
+.back-link-container {
+  margin-left: 0% !important;
+}
+
+.post-comments-container,
+.post_container {
+  margin-bottom: 5% !important;
+}
+
+.post-comments-container {
+  padding-top: 25px !important;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  overflow-y: scroll;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user_post,
+.comments {
+  height: 40vh !important;
+  padding: 1% !important;
+}
+
+.create-post-button {
+  text-align: center;
+}
+
+.create-like-link,
+.create-post-link,
+.see-all-link,
+.back-link2 {
+  border: 1px solid black;
+  width: 100px;
+  background: white;
+  text-align: center;
+}
+
+.post-form {
+  position: relative;
+  left: 35%;
+}
+
+/* Styles for .post-comments-container */
+.post-comments-container::-webkit-scrollbar {
+  width: 12px;
+  height: 2em;
+}
+
+.post-comments-container::-webkit-scrollbar-track {
+  background-color: rgb(27, 22, 56);
+  border-bottom-right-radius: 8px;
+}
+
+.post-comments-container::-webkit-scrollbar-thumb {
+  background-color: rgb(16, 10, 47);
+  border-radius: 20px;
+  border: 3px solid #746c6c;
+}
+
+/* Your remaining CSS rules here */
