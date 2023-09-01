@@ -133,8 +133,8 @@ end
 
 
       # Fetch the user and post objects
-lilly_user = User.find_by(name: "Lilly")
-kingsly_post = Post.find_by(title: "Test")
+# lilly_user = User.find_by(name: "Lilly")
+# kingsly_post = Post.find_by(title: "Test")
 
-# Create a comment
-Comment.create(post: kingsly_post, user: lilly_user, text: 'Hi Baqar! How are your associations going?')
+# # Create a comment
+# Comment.create(post: kingsly_post, user: lilly_user, text: 'Hi Baqar! How are your associations going?')
