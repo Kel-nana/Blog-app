@@ -75,4 +75,7 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'database_cleaner'
+  gem 'minitest', '~> 5.16'
+  gem 'factory_bot_rails'
 end

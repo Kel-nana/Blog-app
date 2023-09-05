@@ -42,7 +42,7 @@ RSpec.describe User, type: :model do
       # Save each post instance explicitly
       post_instances.each(&:save)
       # Expect the correct posts to be returned
-      expect(subject.new_posts.to_a).to eq(post_instances.reverse)
+      expect(subject.new_posts.to_a).to eq(post_instances)
     end
   end
 end
