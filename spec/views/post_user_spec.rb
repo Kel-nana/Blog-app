@@ -48,7 +48,6 @@ RSpec.describe 'User Posts', type: :feature do
       expect(page).to have_content('Likes: 0')
     end
 
-
     it 'redirects to a post\'s show page when clicking on a post' do
       click_link 'Post 1'
       expect(page).to have_current_path(user_post_path(@user, @post1))
