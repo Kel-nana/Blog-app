@@ -284,6 +284,7 @@ body::-webkit-scrollbar-thumb {
     rgba(147, 92, 24, 1) 37%,
     rgba(137, 149, 167, 0.969625350140056) 65%
   );
+
   z-index: 1;
   transform-origin: bottom right;
   animation: animate 5s linear infinite;
