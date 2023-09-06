@@ -475,7 +475,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
 }
 
-/* .log-out-position {
+.log-out-position {
   position: absolute;
   margin-left: 45vw;
   top: 0;
@@ -489,4 +489,4 @@ body::-webkit-scrollbar-thumb {
   border-top-left-radius: 37px;
   background: #424348;
   border: none;
-} */
+}
