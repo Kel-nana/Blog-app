@@ -1,0 +1,18 @@
+<div class="devise-options">
+    <div class = "user-details-output">
+        
+    <% if user_signed_in? %>
+    Username: <h3 class="user-name-sign actions"><%= current_user.name %></h3>
+    <div class = "email-direction">
+    E-mail: <h3 class="user-email actions user-name-sign "><%= current_user.email %></h3>
+    </div>
+    </div>
+    <%= link_to 'Edit profile', edit_user_registration_path, class: "edit-btn all-link actions" %> 
+    <div class = "actions log-out-position">
+    <%= button_to "log out", destroy_user_session_path, method: :delete, class: "log-btn  all-link" %>
+    </div>
+    <% else %>
+    <%= link_to "Sign up", new_user_registration_path, class: "edit-btn all-link" %> 
+    <%= link_to "Log in", new_user_session_path, class: "log-btn " %>
+    <% end %>
+    </div>
