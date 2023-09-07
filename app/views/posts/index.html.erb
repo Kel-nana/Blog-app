@@ -1,0 +1,49 @@
+<main id="posts" class="page">
+<%= render partial: 'shared/nav_link' %>
+
+    <div class=" user-item">
+       <%= render partial: 'shared/user_item', locals: { user: @user, show_link: false  } %>
+    </div>
+    
+  <article class="post-article">
+    <div class ="post_div" >
+    <% if @user.posts.empty? %>
+      <p>No posts added yet.</p>
+    <% else %>
+      <% @user.posts.each do |post| %>
+        <div class="post-container-div ">
+          <h3 class="post-title"><%= link_to post.title, "posts/#{post.id}" , class: "link-custom-color"%></h3>
+          <div class="post-details">
+            <p class="details"><%= truncate(post.text, length: 100) %></p>
+          </div>
+          
+          <div class="comment-like-container post-meta">
+            <p class="coment-likes-data ">
+              Comment: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %>
+            </p>
+          </div>
+          <% if can? :destroy, post %>
+  <%= button_to "Delete", user_post_path(user_id: post.author_id, id: post.id), method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class: "delete-btn" %>
+<% end %>
+        </div>
+        </div>
+
+         <ul class="post-comments-container post">
+          <% post.new_comments.each do |comment| %>
+            <li>
+              <p><%= link_to User.find_by(id: comment.user_id).name, user_path(comment.user_id) %>: <%= truncate(comment.text, length: 60) %>...</p><% if can? :destroy, comment %>
+  <%= button_to "Delete Comment", user_post_comment_path(user_id: post.author_id, post_id: post.id, id: comment.id), method: :delete, data: { confirm: "Are you sure you want to delete this comment?" }, class: "delete-btn" %>
+<% end %>
+            </li>
+          <% end %>
+          <% if post.new_comments.empty? %>
+            <li>No comments added yet.</li>
+          <% end %>
+        </ul>
+      <% end %>
+    <% end %>
+    <div class="create-like-Comment see-all-posts">
+    <button class= "create-like-link see-link">Pagination</button>
+  </div>
+  </article>
+</main>
