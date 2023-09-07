@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
-  has_many :likes
+  has_many :likes, dependent: :destroy
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
 
   after_commit :update_user_posts_counter, on: %i[create destroy]
