@@ -116,6 +116,18 @@ Tests will be implemented later on.
 
 ## 👥 Authors <a name="authors"></a>
 
+👤 **Enobong Isong**
+
+- GitHub: [@githubhandle](https://github.com/Enoisong)
+- Twitter: [@twitterhandle](https://twitter.com/Enobongmisong)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/enobong-isong/)
+
+👤 **Emmanuel Tofa**
+
+- GitHub: [@uno36](https://github.com/uno36)
+- Twitter: [@tofauemmanuel](https://twitter.com/tofauemmanuel)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/emmanuel-tofa-673b2516a/)
+
 👤 **Kelvin Irungu**
 
 - GitHub: [@Kel-nana](https://github.com/Kel-nana)
