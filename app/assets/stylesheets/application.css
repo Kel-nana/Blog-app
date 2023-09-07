@@ -491,7 +491,7 @@ body::-webkit-scrollbar-thumb {
   border: none;
 }
 
-/* .delete-btn {
+.delete-btn {
   background: rgb(97, 9, 9);
   border: 2.5px solid rgb(113, 81, 39);
   border-bottom-right-radius: 17px;
@@ -500,4 +500,4 @@ body::-webkit-scrollbar-thumb {
   font-weight: 700;
   color: rgb(132, 121, 108);
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
-} */
+}
