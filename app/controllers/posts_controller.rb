@@ -36,8 +36,6 @@ class PostsController < ApplicationController
     end
   end
 
-
-
   private
 
   # parameters for post creation
