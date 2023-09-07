@@ -36,17 +36,18 @@ class PostsController < ApplicationController
     end
   end
 
-  @post = Post.find(params[:id])
-  authorize! :destroy, @post # Check authorization using CanCanCan
+  def destroy
+    @post = Post.find(params[:id])
+    authorize! :destroy, @post # Check authorization using CanCanCan
 
-  if @post.destroy
-    flash[:notice] = 'Post deleted successfully.'
-  else
-    flash[:alert] = 'Failed to delete the post.'
+    if @post.destroy
+      flash[:notice] = 'Post deleted successfully.'
+    else
+      flash[:alert] = 'Failed to delete the post.'
+    end
+
+    redirect_to root_path
   end
-
-  redirect_to root_path
-end
 
   private
 
