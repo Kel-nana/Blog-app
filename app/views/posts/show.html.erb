@@ -1,0 +1,46 @@
+<section id = "user-post" class="user-post">
+<%= render partial: 'shared/nav_link' %>
+
+  <div class="post user_post">
+    <div class="post-header">
+    
+      <h2>
+        Post
+        by <%= @user.name %>
+      </h2>
+      <h4>
+        Comments: <%= @post.comments_counter %>,
+        Likes: <%= @post.likes_counter %>
+      </h4>
+    </div>
+    <h3><%= @post.title %></h3>
+    <p><%= @post.text %></p>
+    <% if can? :destroy, @post %>
+  <%= button_to "Delete", user_post_path(user_id: @post.author_id, id: @post.id), method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class: "delete-btn" %>
+<% end %>
+  </div>
+    <br>
+<div class=" user-item">
+       <%= render partial: 'shared/add_comment', locals: { user: @user, show_link: false  } %>
+    </div>
+
+  <div class="create-like-Comment see-all-posts">
+  <%= button_to "Like Post",  user_post_likes_url(user_id: current_user.id, post_id: @post.id),method: :post, class: "create-like-link see-link"%> 
+  </div>
+  
+<% if @post.comments_counter > 0 %>
+  <div class="comments post">
+    <% @comments.each do |comment| %>
+      <li><%= comment.user.name %>:
+      <%= comment.text %>
+       <% if can? :destroy, comment %>
+  <%= button_to "Delete Comment", user_post_comment_path(user_id: @post.author_id, post_id: @post.id, id: comment.id), method: :delete, data: { confirm: "Are you sure you want to delete this comment?" }, class: "delete-btn" %>
+<% end %>
+
+      </li>
+    <% end %>
+    
+</div> 
+  </div>
+<%end%>
+</section>
