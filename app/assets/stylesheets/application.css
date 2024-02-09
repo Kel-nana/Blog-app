@@ -263,7 +263,7 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   align-items: center;
   margin-top: 20vh;
-  height: 63vh;
+  height: 70vh;
 }
 
 #sign-in-body section {
@@ -500,4 +500,15 @@ body::-webkit-scrollbar-thumb {
   border-top-left-radius: 37px;
   background: #424348;
   border: none;
+}
+
+.delete-btn {
+  background: rgb(97, 9, 9);
+  border: 2.5px solid rgb(113, 81, 39);
+  border-bottom-right-radius: 17px;
+  border-top-left-radius: 17px;
+  font-size: 0.8em;
+  font-weight: 700;
+  color: rgb(132, 121, 108);
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
