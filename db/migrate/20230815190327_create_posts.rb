@@ -69,6 +69,8 @@ end
 
 #rails generate migration CreatePosts author_id:integer title:text text:text comments_counter:integer likes_counter:integer updated_at:datetime created_at:datetime
 #   second_post = Post.create(author: second_user, title: 'Hello', text: 'This is my second post')
+# third_user = User.create(name: 'Abdul')
+# third_user = User.create(name: 'Abdul', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Programmer and computer science specialist.')
 #baqar_user = User.create(name: 'Baqar')
 #baqar_post = Post.create(author: baqar_user, title: 'Hello', text: 'This is my second post')
 #dilsher_user = User.create(name: 'Dilsher')
@@ -110,5 +112,21 @@ end
 #repeating process for checking likes method
 # post = Post.find(3)
 # Like.create(user_id: 3, post: post)
+
+      # # Create posts using the association
+      # post1 = subject.posts.build(title: 'Post 1', text: 'Hello', created_at: 1.day.ago, comments_counter: 0,
+      #                             likes_counter: 0)
+      # post2 = subject.posts.build(title: 'Post 2', text: 'kelvin', created_at: 2.days.ago, comments_counter: 0,
+      #                             likes_counter: 0)
+      # post3 = subject.posts.build(title: 'Post 3', text: 'How are you', created_at: 3.days.ago, comments_counter: 0,
+      #                             likes_counter: 0)
+      # subject.posts.build(title: 'Post 4', text: 'Bonjour', created_at: 4.days.ago,
+      #  comments_counter: 0,likes_counter: 0)
+      # # Create an array of posts
+      # postArr = [post1, post2, post3]
+      # # Save each post in the array explicitly
+      # postArr.each(&:save)
+        # Expect the correct posts to be returned
+      # expect(subject.new_posts.to_a).to eq([post3, post2, post1])
 
 
