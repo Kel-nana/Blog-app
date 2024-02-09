@@ -216,7 +216,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 .post-form {
+  display: flex;
   position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   left: 35%;
 }
 
@@ -235,6 +239,22 @@ body::-webkit-scrollbar-thumb {
   background-color: rgb(16, 10, 47);
   border-radius: 20px;
   border: 3px solid #746c6c;
+}
+
+.form-group,
+.btn-comment {
+  position: relative;
+  right: 20vw;
+}
+
+.comment-header {
+  position: relative;
+  right: 37%;
+}
+
+.form-control {
+  height: 15vh;
+  width: 60vw;
 }
 
 /* Your remaining CSS rules here */

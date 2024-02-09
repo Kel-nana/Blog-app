@@ -1,4 +1,4 @@
-<%# <h1>Show a specific User Post</h1> %>
+<h1>Show a specific User Post</h1>
 
 <section id = "user-post" class="user-post">
 <%= render partial: 'shared/nav_link' %>
@@ -19,9 +19,10 @@
     <p><%= @post.text %></p>
   </div>
     <br>
-  <div class="create-post-Comment see-all-posts">
-  <%= link_to "Create New Comment", new_user_post_comment_url(@user, @post), class: "create-post-link see-link"%> 
-  </div>
+<div class=" user-item">
+       <%= render partial: 'shared/add_comment', locals: { user: @user, show_link: false  } %>
+    </div>
+
   <div class="create-like-Comment see-all-posts">
   <%= button_to "Like Post",  user_post_likes_url(user_id: current_user.id, post_id: @post.id),method: :post, class: "create-like-link see-link"%> 
   </div>
