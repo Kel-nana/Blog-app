@@ -1,7 +1,7 @@
-<h1>Show User Details</h1>
-<h3 class="user-id">User ID: <%= @user.id %></h3>
+<%# <h1>Show User Details</h1> %>
 
 <main id="user-details" class="page">
+<h3 class="user-id">User ID: <%= @user.id %></h3>
 <%= render partial: 'shared/nav_link' %>
 
   <div class="user-details-container ">
@@ -34,7 +34,11 @@
     <% end %>
   </article>
 
+<div class="create-post-button see-all-posts">
+  <%= link_to "Create New Post", new_user_post_url(@user.id), class: "create-post-link see-link"%> 
+</div> 
+
   <div class="see-all-posts">
-    <%= link_to "See all posts", user_posts_path(@user), class: "see-link" %>
+    <%= link_to "See all posts", user_posts_path(@user), class: "see-all-link see-link" %>
   </div>
 </main>
