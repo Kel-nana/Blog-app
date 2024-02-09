@@ -1,1 +1,42 @@
 <h1>Users Post list</h1>
+
+<main id="posts" class="page">
+<%= render partial: 'shared/nav_link' %>
+
+    <div class=" user-item">
+       <%= render partial: 'shared/user_item', locals: { user: @user, show_link: true  } %>
+    </div>
+    
+  <article class="post-article">
+    <div class ="post_div" >
+    <% if @user.posts.empty? %>
+      <p>No posts added yet.</p>
+    <% else %>
+      <% @user.posts.each do |post| %>
+        <div class="post-container post">
+          <h3 class="post-title"><%= link_to post.title, "posts/#{post.id}" %></h3>
+          <div class="post-details">
+            <p class="details"><%= truncate(post.text, length: 100) %></p>
+          </div>
+          <div class="comment-like-container post-meta">
+            <p class="coment-likes-data ">
+              Comment: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %>
+            </p>
+          </div>
+        </div>
+        </div>
+
+         <ul class="post-comments-container post">
+          <% post.new_comments.each do |comment| %>
+            <li>
+              <p><%= link_to User.find_by(id: comment.user_id).name, user_path(comment.user_id) %>: <%= truncate(comment.text, length: 60) %>...</p>
+            </li>
+          <% end %>
+          <% if post.new_comments.empty? %>
+            <li>No comments added yet.</li>
+          <% end %>
+        </ul>
+      <% end %>
+    <% end %>
+  </article>
+</main>

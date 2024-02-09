@@ -1,1 +1,30 @@
 <h1>Show a specific User Post</h1>
+
+<section class="user-post">
+<%= render partial: 'shared/nav_link' %>
+
+  <div class="post user_post">
+    <div class="post-header">
+    
+      <h2>
+        Post
+        by <%= @user.name %>
+      </h2>
+      <h4>
+        Comments: <%= @post.comments_counter %>,
+        Likes: <%= @post.likes_counter %>
+      </h4>
+    </div>
+    <h3><%= @post.title %></h3>
+    <p><%= @post.text %></p>
+  </div>
+</section>
+
+<% if @post.comments_counter > 0 %>
+  <div class="comments post">
+    <% @comments.each do |comment| %>
+      <li><%= comment.user.name %>:
+      <%= comment.text %></li>
+    <% end %>
+  </div>
+<%end%>

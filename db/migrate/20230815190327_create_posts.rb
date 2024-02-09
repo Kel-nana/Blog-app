@@ -72,11 +72,11 @@ end
 # third_user = User.create(name: 'Abdul')
 # third_user = User.create(name: 'Abdul', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Programmer and computer science specialist.')
 #baqar_user = User.create(name: 'Baqar')
-#baqar_post = Post.create(author: baqar_user, title: 'Hello', text: 'This is my second post')
+#baqar_post = Post.create( author_id: 3, title: 'top gun', text: 'Testing my post counter')
 #dilsher_user = User.create(name: 'Dilsher')
-#dilsher_post = Post.create(author: dilsher_user, title: 'Hello', text: 'This is amazing i can do this all day Ref: Captain America')
-# kigsley_user = User.find_by(name: 'Kingsley')
-# kigsley_user = Post.create(author: kigsley_user, title: 'I Rock', text: 'Death note is the best anime in the world')
+#dilsher_post = Post.create(author: dilsher_user, title: 'Title', text: 'i am iron man')
+# baqar_user = User.find_by(name: 'Baqar')
+# baqar_user = Post.create(author: baqar_user, title: 'I Rock', text: 'maybe Death note is the best anime in the world')
 # kigsley_user = User.create(name: 'Kingsley')
 # kigsley_user =User.create(name: 'Kingsly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'An amazing coding partnere.')
 # first_post = Post.first
@@ -130,3 +130,11 @@ end
       # expect(subject.new_posts.to_a).to eq([post3, post2, post1])
 
 
+
+
+      # Fetch the user and post objects
+lilly_user = User.find_by(name: "Lilly")
+kingsly_post = Post.find_by(title: "Test")
+
+# Create a comment
+Comment.create(post: kingsly_post, user: lilly_user, text: 'Hi Baqar! How are your associations going?')

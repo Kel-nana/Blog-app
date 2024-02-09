@@ -1,1 +1,40 @@
-<h1>Show a specific User</h1>
+<h1>Show User Details</h1>
+<h3 class="user-id">User ID: <%= @user.id %></h3>
+
+<main id="user-details" class="page">
+<%= render partial: 'shared/nav_link' %>
+
+  <div class="user-details-container ">
+    
+    <div class=" user-item">
+      <%= render partial: 'shared/user_item', locals: { user: @user, show_link: false } %>
+    </div>
+
+    <article class="user-bio">
+      <div class="user-bio-content">
+      <h3>Bio</h3>
+        <%= @user.bio %>
+        </div>
+    </article>
+  </div>
+
+  <article class="user-posts">
+    <% @posts.each do |post| %>
+      <div class="post post_container">
+        <h3 class="post-title"><%= post.title %></h3>
+        <div class="post-content">
+          <p class="post-details"><%= post.text[0..100] %></p>
+        </div>
+        <div class="post-meta">
+          <p class="post-metadata">
+            Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </article>
+
+  <div class="see-all-posts">
+    <%= link_to "See all posts", user_posts_path(@user), class: "see-link" %>
+  </div>
+</main>
