@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   def index
     @users = User.all
-    #  @users.each do |user|
-    #   puts "User ID: #{user.id}, Name: #{user.name}, Email: #{user.email}"
-    # end
   end
 
   def show

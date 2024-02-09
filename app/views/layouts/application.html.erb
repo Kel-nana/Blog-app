@@ -11,6 +11,9 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= render partial: 'shared/log_out' %>
     <%= yield %>
   </body>
 </html>

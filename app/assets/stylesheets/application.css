@@ -257,4 +257,247 @@ body::-webkit-scrollbar-thumb {
   width: 60vw;
 }
 
+#log-in-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+  height: 63vh;
+}
+
+#sign-in-body section {
+  height: 77vh;
+  margin-top: 0;
+}
+
+.card-log {
+  position: relative;
+  width: 420px;
+  height: 470px;
+  background: #1c1c1c;
+  border: 1px solid rgb(113, 81, 39);
+  border-bottom-right-radius: 40px;
+  border-top-left-radius: 40px;
+  overflow: hidden;
+}
+
+.card-log::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 470px;
+  background:
+    linear-gradient(
+      6deg,
+      rgba(148, 86, 9, 1) 16%,
+      rgba(148, 86, 9, 1) 34%,
+      rgba(147, 92, 24, 1) 37%,
+      rgba(137, 149, 167, 0.969625350140056) 65%
+    );
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 5s linear infinite;
+}
+
+.card-sign {
+  width: 620px !important;
+  height: 97vh !important;
+  margin-top: 20px;
+  margin-left: 20%;
+}
+
+.card-sign::before {
+  width: 420px !important;
+  height: 77vh !important;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.card-container {
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgb(113, 81, 39);
+  background: #222;
+  padding: 50px 10px;
+  border-bottom-right-radius: 37px;
+  border-top-left-radius: 37px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container h2 {
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.input-field {
+  width: 250px;
+  margin-bottom: 35px;
+  padding: 20px 0 10px;
+  background: transparent;
+  border: 1px solid #746c6c;
+  box-shadow: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1em;
+  transition: 0.8s;
+  text-align: center;
+  z-index: 10;
+}
+
+.field .input-field:hover {
+  background-color: #424348;
+}
+
+.input-label {
+  position: absolute;
+  left: 22%;
+  padding: 0 10px 5px;
+  margin-top: 52px;
+  color: #4b4d54;
+  font-weight: 500;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  border-bottom: 3.5px solid #746c6c;
+  border-left: 3.5px solid #746c6c;
+  border-bottom-left-radius: 5px;
+  pointer-events: none;
+}
+
+.field {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#field-remember {
+  display: flex;
+  color: #fff;
+  font-weight: 500;
+  margin: 10px 0 20px 0;
+  gap: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  width: 260px;
+  height: 6vh;
+  border: 1px solid #746c6c;
+  margin-left: 5vw;
+  border-bottom-right-radius: 37px;
+  border-top-left-radius: 37px;
+  margin-bottom: 10px;
+}
+
+.log-in-btn {
+  width: 80%;
+  height: 6vh;
+  border: 1px solid #746c6c;
+  border-bottom-right-radius: 37px;
+  border-top-left-radius: 37px;
+  background: #746c6c;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 900;
+}
+
+.log-in-btn:hover {
+  color: rgb(113, 81, 39);
+  transition: 0.8s;
+}
+
+.all-link {
+  color: rgb(113, 81, 39);
+  font-size: 1em;
+  font-weight: 900;
+  text-decoration: none;
+}
+
 /* Your remaining CSS rules here */
+.all-link:hover {
+  color: rgb(169, 119, 54);
+  font-size: 1.2em;
+  font-weight: 900;
+  transition: 0.8s;
+}
+
+.min_char_password {
+  display: none;
+}
+
+.action-sign {
+  margin-top: 20px;
+}
+
+.user-details-output {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-weight: 900;
+  font-size: 1em;
+
+  /* text-decoration: underline; */
+}
+
+.user-name-sign {
+  display: flex;
+  justify-content: flex-start;
+  align-items: last baseline;
+  color: rgb(113, 81, 39);
+  font-size: 1.5em;
+  margin-left: 0 !important;
+  margin-bottom: 50px;
+  padding: 0 7px;
+}
+
+.user-email {
+  font-size: 0.8em !important;
+  margin-bottom: 1px !important;
+}
+
+.email-direction {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 50vw;
+}
+
+.edit-btn {
+  position: absolute;
+  margin-left: 30vw;
+  top: 77%;
+}
+
+.devise-options {
+  position: relative;
+}
+
+.log-out-position {
+  position: absolute;
+  margin-left: 45vw;
+  top: 0;
+  background: #252628;
+}
+
+.log-btn {
+  width: 200px;
+  height: 100%;
+  border-bottom-right-radius: 37px;
+  border-top-left-radius: 37px;
+  background: #424348;
+  border: none;
+}
